@@ -12,6 +12,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   campaignName: string = '';
   campaignLength: number = 0;
   campaignGroupName: string = '';
+  continueButton: boolean = true;
   subs = new SubscriptionsContainer();
 
   constructor(private apiService: ApiService) {}
@@ -29,7 +30,6 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   private getCampaign() {
     this.subs.add = this.apiService.sendGet('/items').subscribe(
       (res: any) => {
-        console.log(res);
         this.campaignData = res;
       },
       (error) => {
@@ -59,5 +59,33 @@ export class CampaignsComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
+  }
+
+  onContinue(event: any) {
+    alert('Done');
+  }
+
+  onCheck(action: any) {
+    if (action?.Checked === true) {
+      action.Checked = false;
+    } else {
+      action.Checked = true;
+    }
+
+    const checkedActions: any = [];
+
+    this.campaignData.forEach((campaign) => {
+      campaign.actions.forEach((act: any) => {
+        if (act?.Checked === true) {
+          checkedActions.push(act);
+        }
+      });
+    });
+
+    if (checkedActions?.length > 0) {
+      this.continueButton = false;
+    } else {
+      this.continueButton = true;
+    }
   }
 }

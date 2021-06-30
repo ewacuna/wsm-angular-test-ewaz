@@ -9,6 +9,7 @@ export class CampaignHeaderComponent implements OnInit {
   @Input() campaignName: any;
   @Input() campaignGroupName: any;
   @Input() campaignLength: any;
+  @Input() continue: any;
 
   constructor() {}
 

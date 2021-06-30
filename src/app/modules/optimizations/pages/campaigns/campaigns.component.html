@@ -2,6 +2,7 @@
   [campaignName]="campaignName"
   [campaignGroupName]="campaignGroupName"
   [campaignLength]="campaignLength"
+  [continue]="continueButton"
   *ngIf="campaignData.length > 0"
 ></app-campaign-header>
 
@@ -35,6 +36,7 @@
                       type="checkbox"
                       class="form-check-input"
                       id="exampleCheck1"
+                      (click)="onCheck(action)"
                     />
                     <label
                       class="form-check-label custom-label"
