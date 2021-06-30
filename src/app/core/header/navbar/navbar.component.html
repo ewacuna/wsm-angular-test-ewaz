@@ -1,0 +1,92 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white px-2">
+  <a class="navbar-brand" routerLink="/">
+    <img
+      [src]="path.assetsImgPath('Logo.svg')"
+      height="54"
+      alt="Company Logo"
+    />
+  </a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div
+    class="collapse navbar-collapse justify-content-end"
+    id="navbarSupportedContent"
+    [collapse]="isCollapsed"
+    [isAnimated]="true"
+  >
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a
+          class="nav-link"
+          href="javascript:void(0);"
+          routerLinkActive="active"
+        >
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="javascript:void(0);"
+          routerLinkActive="active"
+        >
+          Add New Account
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/campaigns" routerLinkActive="active">
+          View Optimizations
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="javascript:void(0);"
+          routerLinkActive="active"
+        >
+          Help Center
+        </a>
+      </li>
+    </ul>
+
+    <span class="ms-0 ms-lg-3 me-2">
+      <img
+        [src]="path.assetsImgPath('Avatar.png')"
+        class="mt-2 mt-lg-0"
+        alt="Profile Photo"
+      />
+    </span>
+
+    <div class="btn-group" dropdown>
+      <span id="button-basic" dropdownToggle aria-controls="dropdown-basic">
+        John Doe <i class="fas fa-caret-down ms-1"></i>
+      </span>
+      <ul
+        id="dropdown-basic"
+        *dropdownMenu
+        class="dropdown-menu"
+        role="menu"
+        aria-labelledby="button-basic"
+      >
+        <li role="menuitem">
+          <a class="dropdown-item" href="javascript:void(0);">Action</a>
+        </li>
+        <li role="menuitem">
+          <a class="dropdown-item" href="javascript:void(0);">Another action</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
