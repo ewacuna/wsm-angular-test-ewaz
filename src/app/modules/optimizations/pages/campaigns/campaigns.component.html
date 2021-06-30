@@ -28,6 +28,33 @@
 
               <!-- Optimization -->
               <h5 class="campaign-title">Optimization</h5>
+              <accordion [isAnimated]="true">
+                <accordion-group *ngFor="let action of campaign.actions">
+                  <div class="form-group form-check" accordion-heading>
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="exampleCheck1"
+                    />
+                    <label
+                      class="form-check-label custom-label"
+                      for="exampleCheck1"
+                    >
+                      {{ action.name }}
+                    </label>
+
+                    <span class="arrow float-right pull-right">
+                      <i class="fas fa-caret-down"></i>
+                    </span>
+                  </div>
+
+                  <div
+                    class="mb-2"
+                    [innerHTML]="variant.description"
+                    *ngFor="let variant of action.actionVariants"
+                  ></div>
+                </accordion-group>
+              </accordion>
             </div>
           </tab>
         </tabset>
