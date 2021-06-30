@@ -1,0 +1,26 @@
+.title {
+  box-shadow: 2px 0px 2px #00000014;
+  color: #fff;
+  opacity: 1;
+
+  span {
+    font: normal normal normal 12px/15px Lato;
+    opacity: 0.5;
+  }
+
+  p {
+    font: normal normal normal 16px/19px Lato;
+    letter-spacing: 0px;
+  }
+}
+.account-name {
+  background: #55acec 0% 0% no-repeat padding-box;
+}
+
+.campaign-name {
+  background: #0c8fec 0% 0% no-repeat padding-box;
+}
+
+.account-progress {
+  background: #0971b9 0% 0% no-repeat padding-box;
+}
