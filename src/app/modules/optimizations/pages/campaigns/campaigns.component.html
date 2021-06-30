@@ -1,4 +1,9 @@
-<app-campaign-header></app-campaign-header>
+<app-campaign-header
+  [campaignName]="campaignName"
+  [campaignGroupName]="campaignGroupName"
+  [campaignLength]="campaignLength"
+  *ngIf="campaignData.length > 0"
+></app-campaign-header>
 
 <section class="container" *ngIf="campaignData.length > 0">
   <div class="row mt-4 mb-4">
@@ -14,11 +19,12 @@
             <div>
               <!-- Instructions -->
               <h5 class="campaign-title">Instructions</h5>
-              <div>
-                <ng-container *ngFor="let variant of campaign.itemVariants">
-                  <div [innerHTML]="variant.description"></div>
-                </ng-container>
-              </div>
+              <ng-container *ngFor="let variant of campaign.itemVariants">
+                <div
+                  class="instructions mb-3"
+                  [innerHTML]="variant.description"
+                ></div>
+              </ng-container>
 
               <!-- Optimization -->
               <h5 class="campaign-title">Optimization</h5>

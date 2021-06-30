@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-campaign-header',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./campaign-header.component.scss'],
 })
 export class CampaignHeaderComponent implements OnInit {
+  @Input() campaignName: any;
+  @Input() campaignGroupName: any;
+  @Input() campaignLength: any;
+
   constructor() {}
 
   ngOnInit(): void {}

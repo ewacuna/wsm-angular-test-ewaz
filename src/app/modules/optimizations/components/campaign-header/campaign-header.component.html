@@ -6,8 +6,7 @@
         title
         account-name
         d-flex
-        justify-content-start
-        justify-content-sm-end
+        justify-content-start justify-content-sm-end
       "
     >
       <div class="d-flex justify-content-center align-items-center mr-3">
@@ -15,18 +14,18 @@
       </div>
       <div class="d-inline-block">
         <span>Account Name</span>
-        <p>ABC Dental</p>
+        <p>{{ campaignGroupName }}</p>
       </div>
     </div>
 
     <div class="col-12 col-sm-4 col-md-3 title campaign-name">
       <span>Campaign Name</span>
-      <p>New- Search - Course - Dowsing - Broad</p>
+      <p>{{ campaignName }}</p>
     </div>
 
     <div class="col-12 col-sm-4 col-md-7 title account-progress">
       <span>Account Progress</span>
-      <p>1 out of X Campaigns Analyzed</p>
+      <p>1 out of {{ campaignLength }} Campaigns Analyzed</p>
     </div>
   </div>
 </div>

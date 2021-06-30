@@ -9,6 +9,11 @@
   width: 100%;
 }
 
+.instructions {
+  max-height: 280px;
+  overflow-y: auto;
+}
+
 ::ng-deep .nav-tabs {
   border-bottom: none;
 }
