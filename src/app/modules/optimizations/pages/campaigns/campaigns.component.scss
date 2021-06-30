@@ -6,6 +6,7 @@
   box-shadow: -4px 5px 8px #00000008;
   opacity: 1;
   padding: 0.8rem 1.2rem;
+  width: 100%;
 }
 
 ::ng-deep .nav-tabs {
@@ -33,6 +34,11 @@
   padding-top: 1.3rem;
 }
 
+::ng-deep .nav-tabs .nav-link:hover,
+.nav-tabs .nav-link:focus {
+  border-radius: 0px;
+}
+
 .campaign-title {
   text-align: left;
   font: normal normal bold 20px/24px Lato;
@@ -41,8 +47,16 @@
   opacity: 1;
 }
 
+// Up
 @media (min-width: 768px) {
   .tab-container {
     display: inherit;
+  }
+}
+
+// Down
+@media (max-width: 767.98px) {
+  .customNav {
+    margin-top: 1.2rem;
   }
 }
