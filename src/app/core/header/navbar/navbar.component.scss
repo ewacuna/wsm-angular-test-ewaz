@@ -20,8 +20,13 @@
   user-select: none;
 }
 
-@media (min-width: 768px) {
+.dropdown-menu {
+  left: -72px !important;
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
   .dropdown-menu {
-    left: -72px !important;
+    left: 0px !important;
   }
 }
