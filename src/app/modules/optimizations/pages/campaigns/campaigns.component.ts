@@ -27,9 +27,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   }
 
   private getCampaign() {
-    const endpoint: string =
-      'https://7e1ec65d-6cc3-4a1e-a781-c265f6cc45da.mock.pstmn.io/items/';
-    this.subs.add = this.apiService.sendGet(endpoint).subscribe(
+    this.subs.add = this.apiService.sendGet('/items').subscribe(
       (res: any) => {
         console.log(res);
         this.campaignData = res;
@@ -41,9 +39,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   }
 
   private getCampaignGroup() {
-    const endpoint: string =
-      'https://7e1ec65d-6cc3-4a1e-a781-c265f6cc45da.mock.pstmn.io/campaign-groups/?id=1';
-    this.subs.add = this.apiService.sendGet(endpoint).subscribe(
+    this.subs.add = this.apiService.sendGet('/campaign-groups/?id=1').subscribe(
       (res: any) => {
         this.campaignGroupName = res[0]?.name || 'Unknown';
       },
@@ -54,9 +50,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   }
 
   private getCampaignInfo() {
-    const endpoint: string =
-      'https://7e1ec65d-6cc3-4a1e-a781-c265f6cc45da.mock.pstmn.io/campaigns/';
-    this.subs.add = this.apiService.sendGet(endpoint).subscribe(
+    this.subs.add = this.apiService.sendGet('/campaigns/').subscribe(
       (res: any) => {
         this.campaignName = res[0]?.name || 'Unknown';
         this.campaignLength = res?.length || 0;
