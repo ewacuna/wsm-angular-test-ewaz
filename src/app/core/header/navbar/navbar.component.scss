@@ -5,6 +5,7 @@
 
 .nav-link {
   color: #14375f !important;
+  user-select: none;
 
   &.active {
     color: #55acec !important;

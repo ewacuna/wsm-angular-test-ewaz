@@ -1,5 +1,29 @@
 <app-campaign-header></app-campaign-header>
 
-<section class="container">
-  <p>campaigns works!</p>
+<section class="container" *ngIf="campaignData.length > 0">
+  <div class="row mt-4 mb-4">
+    <div class="col-12">
+      <div class="row">
+        <tabset [vertical]="true">
+          <tab
+            heading="{{ campaign.name }}"
+            *ngFor="let campaign of campaignData; index as i"
+            customClass="customNav"
+          >
+            <!-- Campaign Info -->
+            <div>
+              <h5 class="campaign-title">Instructions</h5>
+              <div>
+                <ng-container *ngFor="let variant of campaign.itemVariants">
+                  <div [innerHTML]="variant.description"></div>
+                </ng-container>
+              </div>
+
+              <h5 class="campaign-title">Optimization</h5>
+            </div>
+          </tab>
+        </tabset>
+      </div>
+    </div>
+  </div>
 </section>
