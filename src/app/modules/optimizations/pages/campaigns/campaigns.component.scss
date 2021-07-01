@@ -9,6 +9,15 @@
   width: 100%;
 }
 
+::ng-deep .nav-tabs .nav-link.disabled {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.mainTabTitle {
+  color: #14375f !important;
+}
+
 .instructions {
   max-height: 280px;
   overflow-y: auto;
@@ -35,8 +44,8 @@
 ::ng-deep .nav-tabs .nav-link {
   color: #14375f;
   opacity: 1;
-  padding-bottom: 1.3rem;
-  padding-top: 1.3rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 ::ng-deep .nav-tabs .nav-link.active,

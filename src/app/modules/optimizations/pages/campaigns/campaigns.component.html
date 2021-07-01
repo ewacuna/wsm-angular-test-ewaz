@@ -11,11 +11,21 @@
   <div class="row mt-4 mb-4">
     <div class="col-12">
       <div class="row">
-        <tabset [vertical]="true">
+        <tabset [vertical]="true" #goalsTabs>
+          <tab [disabled]="true">
+            <ng-template tabHeading>
+              <span class="text-muted">
+                <small>Scenario selected</small>
+              </span>
+              <h5 class="mainTabTitle">High CPA</h5>
+            </ng-template>
+          </tab>
+          
           <tab
             heading="{{ campaign.name }}"
             *ngFor="let campaign of campaignData; index as i"
             customClass="customNav"
+            [active]="i === 0 ? true : false"
           >
             <!-- Campaign Info -->
             <div>
