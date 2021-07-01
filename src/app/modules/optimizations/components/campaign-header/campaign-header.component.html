@@ -23,13 +23,27 @@
       <p>{{ campaignName }}</p>
     </div>
 
-    <div class="col-12 col-sm-4 col-md-7 title account-progress d-flex justify-content-between">
+    <div
+      class="
+        col-12 col-sm-4 col-md-7
+        title
+        account-progress
+        d-flex
+        justify-content-between
+      "
+    >
       <div>
         <span>Account Progress</span>
         <p>1 out of {{ campaignLength }} Campaigns Analyzed</p>
       </div>
       <div class="d-flex justify-content-center align-items-center">
-        <button class="btn btn-primary custom-btn" [disabled]="continue">Continue</button>
+        <button
+          class="btn btn-primary custom-btn"
+          [disabled]="continue"
+          (click)="onContinue()"
+        >
+          Continue
+        </button>
       </div>
     </div>
   </div>

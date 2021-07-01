@@ -3,6 +3,7 @@
   [campaignGroupName]="campaignGroupName"
   [campaignLength]="campaignLength"
   [continue]="continueButton"
+  (clickedContinue)="onContinue($event)"
   *ngIf="campaignData.length > 0"
 ></app-campaign-header>
 

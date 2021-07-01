@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-campaign-header',
@@ -10,8 +10,13 @@ export class CampaignHeaderComponent implements OnInit {
   @Input() campaignGroupName: any;
   @Input() campaignLength: any;
   @Input() continue: any;
+  @Output() clickedContinue: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onContinue() {    
+    this.clickedContinue.emit({ message: 'Success message' });
+  }
 }

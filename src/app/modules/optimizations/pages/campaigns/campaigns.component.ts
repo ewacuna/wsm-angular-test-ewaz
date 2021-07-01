@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from 'src/app/core/services';
 import { SubscriptionsContainer } from 'src/app/shared/helpers';
+import { NotificationService } from 'src/app/shared/utils';
 
 @Component({
   selector: 'app-campaigns',
@@ -15,7 +16,10 @@ export class CampaignsComponent implements OnInit, OnDestroy {
   continueButton: boolean = true;
   subs = new SubscriptionsContainer();
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private notification: NotificationService
+  ) {}
 
   ngOnInit(): void {
     this.getCampaign();
@@ -33,7 +37,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
         this.campaignData = res;
       },
       (error) => {
-        console.log(error);
+        this.notification.showError('Something went wrong');
       }
     );
   }
@@ -44,7 +48,7 @@ export class CampaignsComponent implements OnInit, OnDestroy {
         this.campaignGroupName = res[0]?.name || 'Unknown';
       },
       (error) => {
-        console.log(error);
+        this.notification.showError('Something went wrong');
       }
     );
   }
@@ -56,13 +60,13 @@ export class CampaignsComponent implements OnInit, OnDestroy {
         this.campaignLength = res?.length || 0;
       },
       (error) => {
-        console.log(error);
+        this.notification.showError('Something went wrong');
       }
     );
   }
 
   onContinue(event: any) {
-    alert('Done');
+    this.notification.showSuccess(event.message);
   }
 
   onCheck(action: any) {
